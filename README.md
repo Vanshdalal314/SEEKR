@@ -22,7 +22,7 @@ SEEKR is an AI assistant that lets you upload PDF files and ask questions in nat
 SEEKR/
 │
 ├── src/
-│   ├── **init**.py
+│   ├── __init__.py
 │   └── helper.py          # Core logic: text extraction, chunking, vector store, conversational chain
 │
 ├── .env                   # Store your GOOGLE\_API\_KEY here
