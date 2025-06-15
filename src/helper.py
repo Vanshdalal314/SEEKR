@@ -24,13 +24,34 @@ def get_text_chunks(text):
     chunks = text_splitter.split_text(text)
     return chunks
 
+# def get_vector_store(text_chunks):
+#     embeddings = GoogleGenerativeAIEmbeddings()
+#     vector_store = FAISS.from_texts(text_chunks, embeddings)
+#     return vector_store
+
 def get_vector_store(text_chunks):
-    embeddings = GoogleGenerativeAIEmbeddings()
+    embeddings = GoogleGenerativeAIEmbeddings(
+        model="models/embedding-001",
+        google_api_key=os.getenv("GOOGLE_API_KEY")
+    )
     vector_store = FAISS.from_texts(text_chunks, embeddings)
     return vector_store
 
+# def get_conversational_chain(vector_store):
+#     llm=ChatGoogleGenerativeAI()
+#     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+#     conversation_chain= ConversationalRetrievalChain.from_llm(llm=llm, retriever=vector_store.as_retriever(), memory=memory)
+#     return conversation_chain
+
 def get_conversational_chain(vector_store):
-    llm=ChatGoogleGenerativeAI()
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-1.5-flash",
+        google_api_key=os.getenv("GOOGLE_API_KEY"),
+    )
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-    conversation_chain= ConversationalRetrievalChain.from_llm(llm=llm, retriever=vector_store.as_retriever(), memory=memory)
+    conversation_chain = ConversationalRetrievalChain.from_llm(
+        llm=llm,
+        retriever=vector_store.as_retriever(),
+        memory=memory
+    )
     return conversation_chain
