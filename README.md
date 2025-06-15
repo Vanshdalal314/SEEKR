@@ -9,9 +9,8 @@ SEEKR is an AI assistant that lets you upload PDF files and ask questions in nat
 
 - 📁 Upload multiple PDF files
 - 🔍 Chunk-based semantic search using FAISS
-- 🤖 Gemini Pro (Google Generative AI) for intelligent answering
+- 🤖 Gemini (Google Generative AI) for intelligent answering
 - 💬 Conversational memory with multi-turn chat
-- 🌓 Light/Dark Mode support (Streamlit)
 - 🖥️ Available via **Streamlit** and **Gradio** interfaces
 
 ---
@@ -19,7 +18,7 @@ SEEKR is an AI assistant that lets you upload PDF files and ask questions in nat
 ## 🗂️ File Structure
 
 
-
+```bash
 SEEKR/
 │
 ├── src/
@@ -34,6 +33,7 @@ SEEKR/
 ├── test.py                # Script for local testing
 └── research/
 └── trials.ipynb       # Experimentation and trials notebook
+````
 
 
 ## 🧪 Requirements
