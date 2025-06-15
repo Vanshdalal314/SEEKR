@@ -1,8 +1,4 @@
-Here’s a well-structured `README.md` for your **SEEKR** AI PDF question-answering app:
 
----
-
-```markdown
 # 📄 SEEKR: AI-Powered PDF Question Answering System
 
 SEEKR is an AI assistant that lets you upload PDF files and ask questions in natural language. It uses Google Gemini Pro + FAISS to provide accurate answers based on your document content, with support for multi-turn conversations.
@@ -22,7 +18,7 @@ SEEKR is an AI assistant that lets you upload PDF files and ask questions in nat
 
 ## 🗂️ File Structure
 
-```
+
 
 SEEKR/
 │
@@ -39,9 +35,6 @@ SEEKR/
 └── research/
 └── trials.ipynb       # Experimentation and trials notebook
 
-````
-
----
 
 ## 🧪 Requirements
 
@@ -51,7 +44,6 @@ Install dependencies:
 pip install -r requirements.txt
 ````
 
----
 
 ## 🔑 Setup Environment
 
